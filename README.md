@@ -1,1 +1,2 @@
-# artificial-intelligence
+## Payments
+A Payments APIs index.
