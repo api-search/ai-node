@@ -1,3 +1,4 @@
+---
 name: OpenAI
 description: >-
   OpenAI is an AI research and deployment company. Our mission is to ensure that
@@ -297,3 +298,4 @@ overlays:
   - type: API Evangelist Ratings
     url: overlays/apis-io-search.yml
 aid: openai
+---
