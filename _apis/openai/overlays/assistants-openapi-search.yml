@@ -11,101 +11,61 @@ paths:
   /assistants:
     get:
       tags:
-        - Returns
-        - List
-        - Of
-        - Assistants.
         - Assistants
-      summary: Returns a list of assistants.
+        - Returns
+      summary: 'Returns A List Of Assistants. '
     post:
       tags:
-        - Create
-        - An
-        - Assistant
-        - With
-        - Model
-        - And
-        - Instructions.
         - Assistants
-      summary: Create an assistant with a model and instructions.
+        - Instructions
+        - Models
+      summary: 'Create An Assistant With A Model And Instructions. '
   /assistants/{assistant_id}:
     get:
       tags:
-        - Retrieves
-        - An
-        - Assistant.
         - Assistants
-        - Assistant_id
-      summary: Retrieves an assistant.
+      summary: 'Retrieves An Assistant. '
     post:
       tags:
-        - Modifies
-        - An
-        - Assistant.
         - Assistants
-        - Assistant_id
-      summary: Modifies an assistant.
+        - Modifies
+      summary: 'Modifies An Assistant. '
     delete:
       tags:
-        - Delete
-        - An
-        - Assistant.
         - Assistants
-        - Assistant_id
-      summary: Delete an assistant.
+      summary: 'Delete An Assistant. '
   /assistants/{assistant_id}/files:
     get:
       tags:
-        - Returns
-        - List
-        - Of
-        - Assistant
-        - Files.
         - Assistants
-        - Assistant_id
         - Files
-      summary: Returns a list of assistant files.
+        - Returns
+      summary: 'Returns A List Of Assistant Files. '
     post:
       tags:
-        - Create
-        - An
-        - Assistant
-        - File
-        - By
-        - Attaching
-        - File](/docs/api-reference/files)
-        - To
-        - '[assistant](/docs/api-reference/assistants).'
         - Assistants
-        - Assistant_id
+        - Attaching
+        - File
         - Files
+        - '[File](/docs/api reference/files)'
+        - '[assistant](/docs/api reference/assistants)'
       summary: >-
-        Create an assistant file by attaching a
-        [File](/docs/api-reference/files) to an
-        [assistant](/docs/api-reference/assistants).
+        Create An Assistant File By Attaching A
+        [File](/docs/api-reference/files) To An
+        [assistant](/docs/api-reference/assistants). 
   /assistants/{assistant_id}/files/{file_id}:
     get:
       tags:
-        - Retrieves
-        - An
-        - Assistant
-        - File.
         - Assistants
-        - Assistant_id
+        - File
         - Files
-        - File_id
-      summary: Retrieves an AssistantFile.
+      summary: 'Retrieves An Assistant File. '
     delete:
       tags:
-        - Delete
-        - An
-        - Assistant
-        - File.
         - Assistants
-        - Assistant_id
+        - File
         - Files
-        - File_id
-      summary: Delete an assistant file.
+      summary: 'Delete An Assistant File. '
 x-oaiMeta:
   groups:
     - id: audio
