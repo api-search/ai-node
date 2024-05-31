@@ -40,119 +40,92 @@ paths:
   /fine_tuning/jobs:
     post:
       tags:
-        - Creates
-        - Fine-tuning
-        - Job
-        - Which
+        - About
         - Begins
-        - The
-        - Process
-        - Of
+        - Complete [Learn
+        - Creates
         - Creating
-        - New
-        - Model
-        - From
-        - Given
-        - |+
-          Dataset.
-
-        - Response
-        - Includes
+        - Dataset Response
         - Details
         - Enqueued
+        - Fine
+        - Fine tuned
+        - Fine tuning
+        - Fine tuning](/docs/guides/fine tuning)
+        - Given
+        - Includes
         - Including
-        - Status
-        - And
-        - Name
-        - Fine-tuned
-        - Models
-        - Once
-        - |-
-          Complete.
-
-          [
-        - Learn
-        - More
-        - About
-        - |
-          Fine-tuning](/docs/guides/fine-tuning)
-        - Fine_tuning
         - Jobs
-      summary: >
-        Creates a fine-tuning job which begins the process of creating a new
-        model from a given dataset.
+        - Models
+        - More
+        - Names
+        - Process
+        - Status
+        - The
+        - Tuning
+      summary: >-
+        Creates A Fine-tuning Job Which Begins The Process Of Creating A New
+        Model From A Given Dataset.
 
 
-        Response includes details of the enqueued job including job status and
-        the name of the fine-tuned models once complete.
+        Response Includes Details Of The Enqueued Job Including Job Status And
+        The Name Of The Fine-tuned Models Once Complete.
 
 
-        [Learn more about fine-tuning](/docs/guides/fine-tuning)
+        [Learn More About Fine-tuning](/docs/guides/fine-tuning)
+         
     get:
       tags:
-        - List
-        - Your
-        - Organization's
-        - Fine-tuning
-        - |
-          Jobs
-        - Fine_tuning
+        - Fine
+        - Fine tuning
         - Jobs
-      summary: |
-        List your organization's fine-tuning jobs
+        - Organization's
+        - Tuning
+        - Your
+      summary: |-
+        List Your Organization's Fine-tuning Jobs
+         
   /fine_tuning/jobs/{fine_tuning_job_id}:
     get:
       tags:
-        - Get
-        - Info
         - About
-        - Fine-tuning
-        - |-
-          Job.
-
-          [
-        - Learn
-        - More
-        - |
-          Fine-tuning](/docs/guides/fine-tuning)
-        - Fine_tuning
+        - Fine
+        - Fine tuning
+        - Fine tuning](/docs/guides/fine tuning)
+        - Info
+        - Job [Learn
         - Jobs
-        - Fine_tuning_job_id
-      summary: |
-        Get info about a fine-tuning job.
+        - More
+        - Tuning
+      summary: |-
+        Get Info About A Fine-tuning Job.
 
-        [Learn more about fine-tuning](/docs/guides/fine-tuning)
+        [Learn More About Fine-tuning](/docs/guides/fine-tuning)
+         
   /fine_tuning/jobs/{fine_tuning_job_id}/events:
     get:
       tags:
-        - Get
-        - Status
-        - Updates
-        - For
-        - Fine-tuning
-        - |
-          Job.
-        - Fine_tuning
-        - Jobs
-        - Fine_tuning_job_id
         - Events
-      summary: |
-        Get status updates for a fine-tuning job.
+        - Fine
+        - Fine tuning
+        - Jobs
+        - Status
+        - Tuning
+      summary: |-
+        Get Status Updates For A Fine-tuning Job.
+         
   /fine_tuning/jobs/{fine_tuning_job_id}/cancel:
     post:
       tags:
+        - Cancel
+        - Fine
+        - Fine tune
         - Immediately
-        - Cancel
-        - Fine-tune
-        - |
-          Job.
-        - Fine_tuning
         - Jobs
-        - Fine_tuning_job_id
-        - Events
-        - Cancel
-      summary: |
-        Immediately cancel a fine-tune job.
+        - Tuning
+      summary: |-
+        Immediately Cancel A Fine-tune Job.
+         
 x-oaiMeta:
   groups:
     - id: audio
