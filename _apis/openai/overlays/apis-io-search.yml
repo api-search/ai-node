@@ -20,7 +20,15 @@ apis:
       currently supports three types of tools - Code Interpreter, Retrieval, and
       Function calling. In the future, we plan to release more OpenAI-built
       tools, and allow you to provide your own tools on our platform.
-    tags: []
+    tags:
+      - Assistants
+      - Attaching
+      - File
+      - Files
+      - Instructions
+      - Models
+      - Modifies
+      - Returns
     overlays:
       - type: APIs.io Search
         url: >-
@@ -35,7 +43,17 @@ apis:
       The Audio API provides two speech to text endpoints, transcriptions and
       translations, based on our state-of-the-art open source large-v2 Whisper
       model.
-    tags: []
+    tags:
+      - Audio
+      - English
+      - Generates
+      - Inputs
+      - Languages
+      - Speech
+      - Text
+      - Transcribes
+      - Transcriptions
+      - Translations
     overlays:
       - type: APIs.io Search
         url: >-
@@ -50,7 +68,14 @@ apis:
       Given a list of messages comprising a conversation, the model will return
       a response., providing an AI chat interface you can use to engage with
       users.
-    tags: []
+    tags:
+      - Chat
+      - Completions
+      - Conversations
+      - Creates
+      - Given
+      - Models
+      - Responses
     overlays:
       - type: APIs.io Search
         url: >-
@@ -66,7 +91,17 @@ apis:
       message as output. Although the chat format is designed to make multi-turn
       conversations easy, it’s just as useful for single-turn tasks without any
       conversation.
-    tags: []
+    tags:
+      - Chat
+      - Completions
+      - Conversations
+      - Creates
+      - Given
+      - Models
+      - Parameters
+      - Prompts
+      - Provided
+      - Responses
     overlays:
       - type: APIs.io Search
         url: >-
@@ -80,7 +115,14 @@ apis:
     description: >-
       Learn how to turn text into numbers, unlocking use cases like search.
       OpenAI’s text embeddings measure the relatedness of text strings.
-    tags: []
+    tags:
+      - Creates
+      - Embedding
+      - Embeddings
+      - Inputs
+      - Representing
+      - Text
+      - Vectors
     overlays:
       - type: APIs.io Search
         url: >-
@@ -96,7 +138,47 @@ apis:
       Assistants and Fine-tuning. Upload a file that can be used across various
       endpoints. The size of all the files uploaded by one organization can be
       up to 100 GB.
-    tags: []
+    tags:
+      - About
+      - Across
+      - Assistants
+      - Attaching
+      - Belong
+      - Content
+      - Contents
+      - Endpoints
+      - File
+      - Files
+      - Fine
+      - Increase
+      - Individual
+      - Information
+      - Learn
+      - Limits
+      - MB
+      - Maximum
+      - Messages
+      - Million
+      - More
+      - One
+      - Organizations
+      - Returns
+      - Size
+      - Specific
+      - Specified
+      - Storage
+      - Supported
+      - Supports
+      - The
+      - Threads
+      - Tokens
+      - Tools
+      - Types
+      - Up
+      - Uploaded
+      - Uploads
+      - Used
+      - Various
     overlays:
       - type: APIs.io Search
         url: >-
@@ -112,7 +194,35 @@ apis:
       Creates a fine-tuning job which begins the process of creating a new model
       from a given dataset.Response includes details of the enqueued job
       including job status and the name of the fine-tuned models once complete.
-    tags: []
+    tags:
+      - About
+      - Begins
+      - Cancel
+      - Creates
+      - Creating
+      - Dataset Response
+      - Details
+      - Enqueued
+      - Events
+      - Fine
+      - Fine Tune
+      - Fine Tuned
+      - Fine Tuning
+      - Given
+      - Immediately
+      - Includes
+      - Including
+      - Info
+      - Jobs
+      - Models
+      - More
+      - Names
+      - Organization's
+      - Process
+      - Status
+      - The
+      - Tuning
+      - Your
     overlays:
       - type: APIs.io Search
         url: >-
@@ -131,7 +241,17 @@ apis:
       images from scratch based on a text prompt, creating edited versions of
       images by having the model replace some areas of a pre-existing image,
       based on a new text prompt, Creating variations of an existing image.
-    tags: []
+    tags:
+      - Creates
+      - Edited
+      - Edits
+      - Extended
+      - Generations
+      - Given
+      - Images
+      - Original
+      - Prompts
+      - Variations
     overlays:
       - type: APIs.io Search
         url: >-
@@ -146,7 +266,22 @@ apis:
       List and describe the various models available in the API. You can refer
       to the Models documentation to understand what models are available and
       the differences between them.
-    tags: []
+    tags:
+      - About
+      - Availability
+      - Available
+      - Basic
+      - Currently
+      - Fine Tuned
+      - Information
+      - Instances
+      - Models
+      - Organizations
+      - Owners
+      - Permissioning
+      - Provides
+      - Providing
+      - Roles
     overlays:
       - type: APIs.io Search
         url: >-
@@ -158,7 +293,31 @@ apis:
     aid: openai:openai-models-api
   - name: OpenAI Threads API
     description: Create threads that assistants can interact with.
-    tags: []
+    tags:
+      - Belonging
+      - Calls
+      - Cancel
+      - Cancels
+      - Completed
+      - Endpoints
+      - File
+      - Files
+      - Given
+      - Is
+      - Messages
+      - Modifies
+      - One
+      - Outputs
+      - Returns
+      - Runs
+      - Single
+      - Steps
+      - Submit
+      - Submitted
+      - The
+      - They're
+      - Threads
+      - Tool
     overlays:
       - type: APIs.io Search
         url: >-
