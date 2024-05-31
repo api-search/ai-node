@@ -11,67 +11,47 @@ paths:
   /models:
     get:
       tags:
-        - Lists
-        - The
-        - Currently
-        - Available
-        - Models,
-        - And
-        - Provides
-        - Basic
-        - Information
         - About
-        - Each
-        - One
-        - Such
-        - As
-        - Owner
-        - Availability.
+        - Availability
+        - Available
+        - Basic
+        - Currently
+        - Information
         - Models
+        - One
+        - Owners
+        - Provides
+        - The
       summary: >-
-        Lists the currently available models, and provides basic information
-        about each one such as the owner and availability.
+        Lists The Currently Available Models, And Provides Basic Information
+        About Each One Such As The Owner And Availability. 
   /models/{model}:
     get:
       tags:
-        - Retrieves
-        - Model
-        - Instance,
-        - Providing
+        - About
         - Basic
         - Information
-        - About
-        - The
-        - Such
-        - As
-        - Owner
-        - And
-        - Permissioning.
+        - Instances
         - Models
-        - Model
+        - Owners
+        - Permissioning
+        - Providing
+        - The
       summary: >-
-        Retrieves a model instance, providing basic information about the model
-        such as the owner and permissioning.
+        Retrieves A Model Instance, Providing Basic Information About The Model
+        Such As The Owner And Permissioning. 
     delete:
       tags:
-        - Delete
-        - Fine-tuned
-        - Model.
-        - You
-        - Must
-        - Have
-        - The
-        - Owner
-        - Role
-        - In
-        - Your
-        - Organization
-        - To
+        - Fine tuned
         - Models
-        - Model
+        - Organizations
+        - Owners
+        - Roles
+        - The
+        - Your
       summary: >-
-        Delete a fine-tuned model. You must have the Owner role in your
-        organization to delete a model.
+        Delete A Fine-tuned Model. You Must Have The Owner Role In Your
+        Organization To Delete A Model. 
 x-oaiMeta:
   groups:
     - id: audio
