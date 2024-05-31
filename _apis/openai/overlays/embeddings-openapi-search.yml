@@ -41,15 +41,14 @@ paths:
     post:
       tags:
         - Creates
-        - An
         - Embedding
-        - Vector
-        - Representing
-        - The
-        - Input
-        - Text.
         - Embeddings
-      summary: Creates an embedding vector representing the input text.
+        - Inputs
+        - Representing
+        - Text
+        - The
+        - Vectors
+      summary: 'Creates An Embedding Vector Representing The Input Text. '
 x-oaiMeta:
   groups:
     - id: audio
