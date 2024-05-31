@@ -40,279 +40,148 @@ paths:
   /threads:
     post:
       tags:
-        - Create
-        - Thread.
         - Threads
-      summary: Create a thread.
+      summary: 'Create A Thread. '
   /threads/{thread_id}:
     get:
       tags:
-        - Retrieves
-        - Thread.
         - Threads
-        - Thread_id
-      summary: Retrieves a thread.
+      summary: 'Retrieves A Thread. '
     post:
       tags:
         - Modifies
-        - Thread.
         - Threads
-        - Thread_id
-      summary: Modifies a thread.
+      summary: 'Modifies A Thread. '
     delete:
       tags:
-        - Delete
-        - Thread.
         - Threads
-        - Thread_id
-      summary: Delete a thread.
+      summary: 'Delete A Thread. '
   /threads/{thread_id}/messages:
     get:
       tags:
-        - Returns
-        - List
-        - Of
-        - Messages
-        - For
         - Given
-        - Thread.
-        - Threads
-        - Thread_id
         - Messages
-      summary: Returns a list of messages for a given thread.
+        - Returns
+        - Threads
+      summary: 'Returns A List Of Messages For A Given Thread. '
     post:
       tags:
-        - Create
-        - Message.
-        - Threads
-        - Thread_id
         - Messages
-      summary: Create a message.
+        - Threads
+      summary: 'Create A Message. '
   /threads/{thread_id}/messages/{message_id}:
     get:
       tags:
-        - Retrieve
-        - Message.
-        - Threads
-        - Thread_id
         - Messages
-        - Message_id
-      summary: Retrieve a message.
+        - Threads
+      summary: 'Retrieve A Message. '
     post:
       tags:
-        - Modifies
-        - Message.
-        - Threads
-        - Thread_id
         - Messages
-        - Message_id
-      summary: Modifies a message.
+        - Modifies
+        - Threads
+      summary: 'Modifies A Message. '
   /threads/runs:
     post:
       tags:
-        - Create
-        - Thread
-        - And
-        - Run
-        - It
-        - In
         - One
-        - Request.
-        - Threads
-        - Thread_id
-        - Messages
-        - Message_id
         - Runs
-      summary: Create a thread and run it in one request.
+        - Threads
+      summary: 'Create A Thread And Run It In One Request. '
   /threads/{thread_id}/runs:
     get:
       tags:
-        - Returns
-        - List
-        - Of
-        - Runs
         - Belonging
-        - To
-        - Thread.
-        - Threads
-        - Thread_id
-        - Messages
-        - Message_id
+        - Returns
         - Runs
-      summary: Returns a list of runs belonging to a thread.
+        - Threads
+      summary: 'Returns A List Of Runs Belonging To A Thread. '
     post:
       tags:
-        - Create
-        - Run.
-        - Threads
-        - Thread_id
-        - Messages
-        - Message_id
         - Runs
-      summary: Create a run.
+        - Threads
+      summary: 'Create A Run. '
   /threads/{thread_id}/runs/{run_id}:
     get:
       tags:
-        - Retrieves
-        - Run.
-        - Threads
-        - Thread_id
-        - Messages
-        - Message_id
         - Runs
-        - Run_id
-      summary: Retrieves a run.
+        - Threads
+      summary: 'Retrieves A Run. '
     post:
       tags:
         - Modifies
-        - Run.
-        - Threads
-        - Thread_id
-        - Messages
-        - Message_id
         - Runs
-        - Run_id
-      summary: Modifies a run.
+        - Threads
+      summary: 'Modifies A Run. '
   /threads/{thread_id}/runs/{run_id}/submit_tool_outputs:
     post:
       tags:
-        - When
-        - Run
-        - Has
-        - The
-        - '`status:'
-        - '"requires_action"`'
-        - And
-        - '`required_action.type`'
-        - Is
-        - '`submit_tool_outputs`,'
-        - This
-        - Endpoint
-        - Can
-        - Be
-        - Used
-        - To
-        - Submit
-        - Outputs
-        - From
-        - Tool
+        - '"requires action"`'
         - Calls
-        - Once
-        - They're
-        - All
-        - Completed.
-        - Must
-        - Submitted
-        - In
-        - Single
-        - |
-          Request.
-        - Threads
-        - Thread_id
-        - Messages
-        - Message_id
+        - Completed
+        - Endpoints
+        - Is
+        - Outputs
         - Runs
-        - Run_id
-        - Submit_tool_outputs
-      summary: >
-        When a run has the `status: "requires_action"` and
-        `required_action.type` is `submit_tool_outputs`, this endpoint can be
-        used to submit the outputs from the tool calls once they're all
-        completed. All outputs must be submitted in a single request.
+        - Single
+        - Submit
+        - Submitted
+        - The
+        - They're
+        - Threads
+        - Tool
+        - Used
+        - '`required action type`'
+        - '`status:'
+        - '`submit tool outputs`,'
+      summary: >-
+        When A Run Has The `status: "requires_action"` And
+        `required_action.type` Is `submit_tool_outputs`, This Endpoint Can Be
+        Used To Submit The Outputs From The Tool Calls Once They're All
+        Completed. All Outputs Must Be Submitted In A Single Request.
+         
   /threads/{thread_id}/runs/{run_id}/cancel:
     post:
       tags:
-        - Cancels
-        - Run
-        - That
-        - Is
-        - '`in_progress`.'
-        - Threads
-        - Thread_id
-        - Messages
-        - Message_id
-        - Runs
-        - Run_id
-        - Submit_tool_outputs
         - Cancel
-      summary: Cancels a run that is `in_progress`.
+        - Cancels
+        - Is
+        - Runs
+        - Threads
+        - '`in progress`'
+      summary: 'Cancels A Run That Is `in_progress`. '
   /threads/{thread_id}/runs/{run_id}/steps:
     get:
       tags:
-        - Returns
-        - List
-        - Of
-        - Run
-        - Steps
         - Belonging
-        - To
-        - Run.
-        - Threads
-        - Thread_id
-        - Messages
-        - Message_id
+        - Returns
         - Runs
-        - Run_id
-        - Submit_tool_outputs
-        - Cancel
         - Steps
-      summary: Returns a list of run steps belonging to a run.
+        - Threads
+      summary: 'Returns A List Of Run Steps Belonging To A Run. '
   /threads/{thread_id}/runs/{run_id}/steps/{step_id}:
     get:
       tags:
-        - Retrieves
-        - Run
-        - Step.
-        - Threads
-        - Thread_id
-        - Messages
-        - Message_id
         - Runs
-        - Run_id
-        - Submit_tool_outputs
-        - Cancel
         - Steps
-        - Step_id
-      summary: Retrieves a run step.
+        - Threads
+      summary: 'Retrieves A Run Step. '
   /threads/{thread_id}/messages/{message_id}/files:
     get:
       tags:
-        - Returns
-        - List
-        - Of
-        - Message
-        - Files.
-        - Threads
-        - Thread_id
-        - Messages
-        - Message_id
-        - Runs
-        - Run_id
-        - Submit_tool_outputs
-        - Cancel
-        - Steps
-        - Step_id
         - Files
-      summary: Returns a list of message files.
+        - Messages
+        - Returns
+        - Threads
+      summary: 'Returns A List Of Message Files. '
   /threads/{thread_id}/messages/{message_id}/files/{file_id}:
     get:
       tags:
-        - Retrieves
-        - Message
-        - File.
-        - Threads
-        - Thread_id
-        - Messages
-        - Message_id
-        - Runs
-        - Run_id
-        - Submit_tool_outputs
-        - Cancel
-        - Steps
-        - Step_id
+        - File
         - Files
-        - File_id
-      summary: Retrieves a message file.
+        - Messages
+        - Threads
+      summary: 'Retrieves A Message File. '
 x-oaiMeta:
   groups:
     - id: audio
