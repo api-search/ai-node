@@ -40,17 +40,15 @@ paths:
   /chat/completions:
     post:
       tags:
-        - Creates
-        - Model
-        - Response
-        - For
-        - The
-        - Given
-        - Chat
-        - Conversation.
         - Chat
         - Completions
-      summary: Creates a model response for the given chat conversation.
+        - Conversations
+        - Creates
+        - Given
+        - Models
+        - Responses
+        - The
+      summary: 'Creates A Model Response For The Given Chat Conversation. '
 x-oaiMeta:
   groups:
     - id: audio
