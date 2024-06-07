@@ -1,0 +1,859 @@
+openapi: 3.0.0
+info:
+  title: Proompty API
+  version: 1.1.0
+  description: >-
+    **Proompty API Documentation For Developers**
+
+
+    **Proompty** is an advanced **Retrieval Augmented Generation (RAG)** API
+    designed to empower users in seamlessly integrating their data and
+    harnessing the power of customized **Large Language Model (LLM)** prompts
+    for interactive communication. At its core, Proompty operates through a
+    series of interconnected functionalities that enable users to navigate and
+    manipulate their data effectively.
+
+
+    The API offers a multifaceted approach to content organization through the
+    creation of **Topics**, which serve as thematic containers for related
+    information. Within these Topics, users can craft **Agents** tailored to
+    their specific needs, leveraging the rich capabilities of LLMs to generate
+    contextually relevant responses.
+
+
+    Additionally, Proompty supports the uploading of documents, enriching the
+    content repository with valuable information that can be referenced and
+    queried during interactions. These documents enhance the AI's understanding
+    of the topic and facilitate more informed responses to user inquiries.
+
+
+    One of the standout features of Proompty is its chat functionality, which
+    allows users to engage in dynamic conversations with the AI-powered Prompt
+    system. By submitting messages or binary streams to designated prompts
+    within selected topics, users can elicit responses that draw upon the
+    accumulated knowledge base, providing valuable insights and facilitating
+    productive exchanges.
+
+
+    In essence, Proompty offers a comprehensive ecosystem for data-driven
+    communication, enabling users to create, organize, and interact with content
+    in a manner that is both intuitive and highly customizable. Whether it's
+    crafting bespoke prompts, uploading documents, or engaging in chat-based
+    interactions, the API empowers users to harness the full potential of their
+    data in driving meaningful conversations and uncovering valuable insights.
+  termsOfService: https://proompty.com/terms-of-service
+  contact:
+    email: developers@proompty.com
+externalDocs:
+  url: /api.yaml
+  description: OpenAPI Specification
+servers:
+  - url: https://app.proompty.com/api
+security:
+  - APIKey: []
+tags:
+  - name: User
+    description: User related endpoints
+components:
+  securitySchemes:
+    APIKey:
+      type: apiKey
+      in: header
+      name: apiKey
+  schemas:
+    BaseModel:
+      type: object
+      properties:
+        id:
+          type: integer
+          description: The user ID.
+          example: auto-generated
+          readOnly: true
+        base:
+          type: object
+          description: The base properties (part all models).
+          readOnly: true
+          properties:
+            organization:
+              type: string
+              description: The organization.
+              example: N6Z2tZFAyEeR7eC784BXAAGGBah1
+            owner:
+              type: string
+              description: The owner.
+              example: N6Z2tZFAyEeR7eC784BXAAGGBah1
+            createdAt:
+              type: string
+              description: The date the document was created.
+              example: '2021-01-01T00:00:00.000Z'
+            updatedAt:
+              type: string
+              description: The date the document was updated.
+              example: '2021-01-01T00:00:00.000Z'
+            deletedAt:
+              type: string
+              description: The date the document was deleted (null if not deleted).
+              example: null
+    Claims:
+      type: object
+      properties:
+        plan:
+          $ref: '#/components/schemas/PlanType'
+        role:
+          $ref: '#/components/schemas/RoleType'
+        email:
+          type: string
+          description: The user's email.
+          example: john.doe@acme.com
+        hasStripeSubscription:
+          type: boolean
+          description: True if user has a stripe subscription.
+          example: false
+        waitingList:
+          type: boolean
+          description: True if user is on the waiting list.
+          example: false
+    Document:
+      allOf:
+        - $ref: '#/components/schemas/BaseModel'
+      type: object
+      required:
+        - fileName
+        - mimeType
+        - size
+        - md5
+      description: A document in the Proompty API.
+      properties:
+        fileName:
+          type: string
+          description: The document's file name.
+          example: science.pdf
+        mimeType:
+          type: string
+          description: The document's MIME type.
+          example: application/pdf
+        size:
+          type: number
+          description: The document's size in bytes.
+          example: 1024
+        md5:
+          type: string
+          description: The document's MD5 hash.
+          example: d41d8cd98f00b204e9800998ecf8427e
+        status:
+          type: string
+          description: The document's processing status.
+          example: processing
+        suggestedQuestions:
+          type: array
+          description: The suggested questions for the document.
+          items:
+            type: string
+          example:
+            - What is the main idea?
+            - What is the author trying to convey?
+    Prompt:
+      allOf:
+        - $ref: '#/components/schemas/BaseModel'
+      type: object
+      required:
+        - prompt
+      description: A prompt to query document in a topic.
+      properties:
+        prompt:
+          type: string
+          description: The prompt.
+          example: The document in this topic is about...
+    Topic:
+      allOf:
+        - $ref: '#/components/schemas/BaseModel'
+      type: object
+      required:
+        - name
+      description: A topic in the Proompty API.
+      properties:
+        name:
+          type: string
+          description: The topic's name.
+          example: Science
+        chats:
+          type: object
+          description: The chats associated with the topic.
+          properties:
+            chatId:
+              type: string
+              description: The chat ID.
+              example: '1'
+        documents:
+          type: object
+          description: The documents associated with the topic.
+          properties:
+            documentId:
+              type: string
+              description: The document ID.
+              example: '1'
+        prompts:
+          type: object
+          description: The prompts associated with the topic.
+          properties:
+            promptId:
+              type: string
+              description: The prompt ID.
+              example: '1'
+    User:
+      allOf:
+        - $ref: '#/components/schemas/BaseModel'
+      type: object
+      properties:
+        message:
+          $ref: '#/components/schemas/ChatMessage'
+        email:
+          type: string
+          description: The user's email.
+          example: john.doe@acme.com
+        fullname:
+          type: string
+          description: The user's fullname.
+          example: John Doe
+        avatar:
+          type: string
+          description: The user's avatar url.
+          example: https://acme.com/john-doe.png
+        plan:
+          type: string
+          description: The user's plan.
+          example: free
+          readOnly: true
+        role:
+          $ref: '#/components/schemas/RoleType'
+        waitingList:
+          type: boolean
+          description: The user's waitingList.
+          example: false
+          readOnly: true
+        stripeLink:
+          type: string
+          description: The user's stripeLink.
+          readOnly: true
+        stripeId:
+          type: string
+          description: The user's stripeId.
+          readOnly: true
+      required:
+        - email
+        - fullname
+        - plan
+      description: A user.
+    PlanType:
+      type: string
+      enum:
+        - free
+        - pro
+        - unlimited
+      description: The user plan.
+      example: free
+    RoleType:
+      type: string
+      enum:
+        - admin
+        - subscriber
+      description: The user role.
+      example: subscriber
+      readOnly: true
+    FromType:
+      type: object
+      properties:
+        from:
+          type: string
+          enum:
+            - user
+            - ai
+            - system
+    SystemSuggestionMessage:
+      type: object
+      properties:
+        from:
+          type: string
+          enum:
+            - ai
+    UserMessage:
+      type: object
+      properties:
+        from:
+          type: string
+          enum:
+            - ai
+    AiMessage:
+      type: object
+      properties:
+        from:
+          type: string
+          enum:
+            - ai
+    ChatMessage:
+      oneOf:
+        - $ref: '#/components/schemas/SystemSuggestionMessage'
+        - $ref: '#/components/schemas/UserMessage'
+        - $ref: '#/components/schemas/AiMessage'
+paths:
+  /me:
+    get:
+      tags:
+        - User
+      description: Retrieve user information
+      summary: >-
+        Retrieves user information within the Proompty API system. By sending a
+        GET request to this endpoint, users can obtain detailed data pertaining
+        to their profile and associated claims. This includes essential user
+        attributes such as email, full name, avatar URL, subscription plan, and
+        role. Additionally, the response includes claims regarding the user's
+        subscription status, role type, and other pertinent details. In the
+        event that the requested user is not found, a 404 error response is
+        returned, indicating the absence of the specified user within the
+        system.
+      responses:
+        '200':
+          description: User info
+          content:
+            application/json:
+              schema:
+                allOf:
+                  - $ref: '#/components/schemas/User'
+                properties:
+                  claims:
+                    $ref: '#/components/schemas/Claims'
+        '404':
+          description: User not found
+  /topics/{topicId}:
+    get:
+      tags:
+        - Topics
+      description: Get a topic by ID
+      summary: >-
+        Retrieve details about a specific topic in the Proompty API. By sending
+        a GET request to this endpoint with the corresponding topicId parameter,
+        users can access information such as the topic's title, description, and
+        any associated documents or chats. The API responds with the topic
+        object in JSON format, containing the relevant details. In case the
+        requested topic is not found, appropriate error responses are returned
+        (404 for topic not found, 500 for other errors), ensuring users receive
+        accurate feedback regarding the status of their request.
+      parameters:
+        - in: path
+          name: topicId
+          schema:
+            type: string
+          required: true
+        - in: query
+          name: include
+          schema:
+            type: string
+          required: false
+          description: >-
+            Include additional data in the response. Possible values: documents,
+            chats.
+      responses:
+        '200':
+          description: Topic
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Topic'
+        '404':
+          description: Not found
+    put:
+      tags:
+        - Topics
+      description: Update a topic by ID
+      summary: >-
+        Update the details of a specific topic in the Proompty API. By sending a
+        PUT request to this endpoint with the corresponding topicId parameter
+        and the updated topic object in the request body, users can modify the
+        topic's title, description, or other attributes. The API responds with
+        the updated topic object in JSON format, containing the new details. In
+        case the requested topic is not found, an appropriate error response is
+        returned (404), ensuring users receive accurate feedback regarding the
+        status of their request.
+      parameters:
+        - in: path
+          name: topicId
+          schema:
+            type: string
+          required: true
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Topic'
+      responses:
+        '200':
+          description: Topic
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Topic'
+  /topics/{topicId}/documents/{documentId}:
+    get:
+      tags:
+        - Documents
+      description: Get a document by ID
+      summary: >-
+        Retrieve details about a specific document within a designated topic in
+        the Proompty API. By sending a GET request to this endpoint with the
+        corresponding topicId and documentId parameters, users can access
+        information such as the document's content, creation date, and any
+        associated metadata. The API responds with the document object in JSON
+        format, containing the relevant details. In case the requested document
+        or topic is not found, appropriate error responses are returned (404 for
+        document not found, 500 for other errors), ensuring users receive
+        accurate feedback regarding the status of their request.
+      parameters:
+        - in: path
+          name: topicId
+          schema:
+            type: string
+          required: true
+        - in: path
+          name: documentId
+          schema:
+            type: string
+          required: true
+      responses:
+        '200':
+          description: Document
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Document'
+        '404':
+          description: Not found
+    delete:
+      tags:
+        - Documents
+      description: Delete a document by ID
+      parameters:
+        - in: path
+          name: topicId
+          schema:
+            type: string
+          required: true
+        - in: path
+          name: documentId
+          schema:
+            type: string
+          required: true
+      responses:
+        '200':
+          description: ok
+        '404':
+          description: Not found
+      summary: >-
+        Delete a specific document within a designated topic in the Proompty
+        API. Users can send a DELETE request to this endpoint with the relevant
+        topicId and documentId parameters to remove the specified document from
+        the topic. The API responds with a success message in JSON format,
+        confirming that the document has been successfully deleted. In case the
+        requested document or topic is not found, appropriate error responses
+        are returned (404 for document not found, 500 for other errors),
+        ensuring users receive accurate feedback regarding the status of their
+        request.
+  /topics/{topicId}/documents/upload:
+    post:
+      parameters:
+        - in: path
+          name: topicId
+          schema:
+            type: string
+          required: true
+      tags:
+        - Documents
+      description: Upload a document to a topic
+      summary: >-
+        Upload a document to a specific topic. Users can send a POST request to
+        this endpoint with the relevant topicId parameter and a document file to
+        upload a new document to the specified topic. The API responds with a
+        JSON object containing the uploaded document details and any relevant
+        metadata. This endpoint enables users to efficiently upload and manage
+        documents within topics, facilitating seamless access and sharing of
+        resources across the Proompty platform. In case the document already
+        exists within the specified topic, the endpoint returns an appropriate
+        error response (409), indicating that the document is already present in
+        the topic.
+      requestBody:
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                file:
+                  type: string
+                  format: binary
+      responses:
+        '201':
+          description: Document uploaded
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  document:
+                    $ref: '#/components/schemas/Document'
+        '404':
+          description: Topic not found
+        '409':
+          description: Document already exists
+        '500':
+          description: Error uploading document
+  /topics/{topicId}/prompts/{promptId}/chat:
+    post:
+      parameters:
+        - in: path
+          name: topicId
+          schema:
+            type: string
+          required: true
+        - in: path
+          name: promptId
+          schema:
+            type: string
+          required: true
+      tags:
+        - Prompts
+      description: >
+        Chat with a Prompt AI with a message or a binary stream using
+        content-type: application/octet-stream (see Request body dropdown)
+      summary: >
+        Retrieves user information within the Proompty API system. By sending a
+        GET request to this endpoint, users can obtain detailed data pertaining
+        to their profile and associated claims. This includes essential user
+        attributes such as email, full name, avatar URL, subscription plan, and
+        role. Additionally, the response includes claims regarding the user's
+        subscription status, role type, and other pertinent details. In the
+        event that the requested user is not found, a 404 error response is
+        returned, indicating the absence of the specified user within the
+        system.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              properties:
+                message:
+                  type: string
+                  description: The message to send to the prompt AI.
+                  example: What is your favorite color?
+                model:
+                  type: string
+                  description: The model to use for the response. Default is gpt4.
+                  example: gpt3 | gpt4 | gpt4o
+                temperature:
+                  type: string
+                  description: The temperature to use for the response. Default is 0.15.
+                  example: '0.15'
+                maxTokens:
+                  type: string
+                  description: >-
+                    The maximum number of tokens to generate for the response.
+                    Default is 500.
+                  example: '500'
+          application/octet-stream:
+            schema:
+              type: string
+              format: binary
+              description: The binary stream to be uploaded.
+      responses:
+        '200':
+          description: Prompt
+          content:
+            application/json:
+              schema:
+                properties:
+                  text:
+                    type: string
+                    description: The response from the prompt AIt.
+                    example: My favorite color is blue.
+                  model:
+                    type: string
+                    description: The model used to generate the response.
+                    example: gpt4
+                  sourceDocuments:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        metadata:
+                          type: object
+                          properties:
+                            documentId:
+                              type: string
+                            filename:
+                              type: string
+                            topicId:
+                              type: string
+        '404':
+          description: Prompt not found
+        '500':
+          description: Error getting prompt
+  /topics/{topicId}/prompts/{promptId}:
+    get:
+      parameters:
+        - in: path
+          name: topicId
+          schema:
+            type: string
+          required: true
+        - in: path
+          name: promptId
+          schema:
+            type: string
+          required: true
+      tags:
+        - Prompts
+      description: Retrieves a Prompt
+      summary: >-
+        Retrieve details about a specific prompt within a designated topic in
+        the Proompty API. By sending a GET request to this endpoint with the
+        corresponding topicId and promptId parameters, users can access
+        information such as the prompt's content, creation date, and any
+        associated metadata. The API responds with the prompt object in JSON
+        format, containing the relevant details. In case the requested prompt or
+        topic is not found, appropriate error responses are returned (404 for
+        prompt not found, 500 for other errors), ensuring users receive accurate
+        feedback regarding the status of their request.
+      responses:
+        '200':
+          description: Prompt
+          content:
+            application/json:
+              schema:
+                type: object
+                $ref: '#/components/schemas/Prompt'
+        '404':
+          description: Prompt not found
+        '500':
+          description: Error getting prompt
+    put:
+      parameters:
+        - in: path
+          name: topicId
+          schema:
+            type: string
+          required: true
+        - in: path
+          name: promptId
+          schema:
+            type: string
+          required: true
+      tags:
+        - Prompts
+      description: Update a Prompt
+      summary: >-
+        Update a specific prompt within a designated topic. Users can send a PUT
+        request to this endpoint with the corresponding topicId and promptId
+        parameters, along with a JSON payload containing the updated prompt
+        information. This enables users to modify aspects of the prompt such as
+        its content, metadata, or any other relevant properties. Upon successful
+        execution, the endpoint responds with the updated prompt object in JSON
+        format, providing confirmation of the changes made. In case the
+        specified prompt or topic is not found, the endpoint returns an
+        appropriate error response (404 for prompt not found, 500 for other
+        errors), ensuring transparent communication and accurate handling of
+        requests.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Prompt'
+      responses:
+        '200':
+          description: Prompt
+          content:
+            application/json:
+              schema:
+                type: object
+                $ref: '#/components/schemas/Prompt'
+        '404':
+          description: Prompt not found
+        '500':
+          description: Error getting prompt
+    delete:
+      parameters:
+        - in: path
+          name: topicId
+          schema:
+            type: string
+          required: true
+        - in: path
+          name: promptId
+          schema:
+            type: string
+          required: true
+      tags:
+        - Prompts
+      description: Deletes a Prompt
+      summary: >-
+        Remove a specific prompt associated with a particular topic. To utilize
+        this endpoint, users send a DELETE request with the relevant topicId and
+        promptId parameters. Upon successful execution, the specified prompt is
+        permanently deleted from the system. The API responds with a
+        confirmation message indicating the successful deletion of the prompt.
+        In the event that the requested prompt or topic is not found,
+        appropriate error responses are returned (404 for prompt not found, 500
+        for other errors). This endpoint provides users with the capability to
+        manage prompts effectively within their topics, ensuring streamlined
+        content management within the Proompty platform.
+      responses:
+        '200':
+          description: Confirmation
+          content:
+            application/json:
+              schema:
+                properties:
+                  message:
+                    type: string
+                    example: Prompt deleted
+        '404':
+          description: Prompt not found
+        '500':
+          description: Error getting prompt
+  /topics/{topicId}/prompts:
+    get:
+      parameters:
+        - in: path
+          name: topicId
+          schema:
+            type: string
+          required: true
+      tags:
+        - Prompts
+      description: Retrieve all prompts for a topic
+      summary: >-
+        Retrieve a list of all prompts associated with a specific topic. Users
+        can send a GET request to this endpoint with the relevant topicId
+        parameter to access comprehensive information about each prompt within
+        the specified topic. The API responds with an array of prompt objects in
+        JSON format, containing details such as prompt content, creation dates,
+        and any relevant metadata. This endpoint facilitates efficient
+        management and retrieval of prompts within topics, allowing users to
+        access and utilize prompts effectively in their interactions with the
+        Proompty platform. In case the requested topic is not found, the
+        endpoint returns an appropriate error response (404), ensuring clarity
+        and accuracy in communication between users and the API.
+      responses:
+        '200':
+          description: Prompts
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Prompt'
+        '404':
+          description: Topic not found
+        '500':
+          description: Error getting prompts
+    post:
+      parameters:
+        - in: path
+          name: topicId
+          schema:
+            type: string
+          required: true
+      tags:
+        - Prompts
+      description: Create a prompt for a topic
+      summary: >-
+        Create a new prompts within a specified topic. Users can send a POST
+        request to this endpoint, including the topicId parameter in the URL
+        path and a JSON payload containing the details of the prompt to be
+        created. This payload typically includes the prompt content, along with
+        any relevant metadata. Upon successful execution, the API responds with
+        the newly created prompt object in JSON format, confirming its addition
+        to the specified topic. If there are any issues with the request, such
+        as invalid input data or the specified topic not being found, the
+        endpoint returns an appropriate error response (400 for bad request, 404
+        for topic not found), ensuring users receive accurate feedback regarding
+        the status of their request. This endpoint offers users a
+        straightforward method for adding prompts to topics, facilitating the
+        efficient management and organization of content within the Proompty
+        platform.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Prompt'
+      responses:
+        '200':
+          description: Prompt
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Prompt'
+        '400':
+          description: Bad request
+        '404':
+          description: Topic not found
+        '500':
+          description: Error creating prompt
+  /topics:
+    get:
+      tags:
+        - Topics
+      description: Get all topics
+      summary: >-
+        Retrieve all topics in the Proompty API. By sending a GET request to
+        this endpoint, users can access a list of all topics available in the
+        system. The API responds with an array of topic objects in JSON format,
+        containing the relevant details. In case no topics are found, an
+        appropriate error response is returned (404), ensuring users receive
+        accurate feedback regarding the status of their request.
+      parameters:
+        - in: query
+          name: include
+          schema:
+            type: string
+          required: false
+          description: 'Include additional data in the response. Possible values: chats.'
+      responses:
+        '200':
+          description: Topic[]
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Topic'
+        '404':
+          description: Not found
+    post:
+      tags:
+        - Topics
+      description: Create a topic
+      summary: >-
+        Create a new topic in the Proompty API. By sending a POST request to
+        this endpoint with the new topic object in the request body, users can
+        create a new topic with the specified attributes. The API responds with
+        the newly created topic object in JSON format, containing the relevant
+        details. In case the maximum number of topics allowed on the user's plan
+        is reached, an appropriate error response is returned (400), ensuring
+        users receive accurate feedback regarding the status of their request.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Topic'
+      responses:
+        '200':
+          description: Topic
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Topic'
+        '400':
+          description: Maximum topics reached
+        '500':
+          description: Internal server error
