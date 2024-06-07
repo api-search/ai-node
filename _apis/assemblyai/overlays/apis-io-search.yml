@@ -21,14 +21,44 @@ apis:
       Function calling. In the future, we plan to release more OpenAI-built
       tools, and allow you to provide your own tools on our platform.
     tags:
-      - Assistants
-      - Attaching
-      - File
       - Files
-      - Instructions
-      - Models
-      - Modifies
-      - Returns
+      - Media
+      - Uploads
+      - Audio
+      - Transcribe
+      - Transcripts
+      - Format
+      - Subtitle
+      - Subtitles
+      - Sentences
+      - Paragraphs
+      - Search
+      - Word
+      - Words
+      - Redacted
+      - Authentication
+      - Real Time
+      - STT
+      - Streaming
+      - Temporary
+      - Tokens
+      - Generate
+      - Le
+      - Lemur
+      - MUR
+      - Runs
+      - Tasks
+      - Using
+      - Summaries
+      - Summarize
+      - Answers
+      - Ask
+      - Questions
+      - Actions
+      - Extract
+      - Items
+      - Data
+      - Purge
     overlays:
       - type: APIs.io Search
         url: >-
