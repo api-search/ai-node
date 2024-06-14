@@ -244,9 +244,6 @@ apis:
         url: properties/threads-openapi-original.yml
     overlays:
       - type: APIs.io Search
-        url: >-
-          overlays/https://github.com/apis-json/artisanal/tree/main/apis/openai/threads-openapi-search.yml
-      - type: APIs.io Search
         url: overlays/threads-openapi-search.yml
       - type: API Evangelist Ratings
         url: overlays/threads-openapi-api-evangelist-ratings.yml

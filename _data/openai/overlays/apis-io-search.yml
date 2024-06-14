@@ -29,6 +29,11 @@ apis:
       - Models
       - Modifies
       - Returns
+    properties:
+      - type: Documentation
+        url: https://platform.openai.com/docs/api-reference
+      - type: OpenAPI
+        url: properties/assistants-openapi-original.yml      
     overlays:
       - type: APIs.io Search
         url: >-
@@ -54,6 +59,11 @@ apis:
       - Transcribes
       - Transcriptions
       - Translations
+    properties:
+      - type: Documentation
+        url: https://platform.openai.com/docs/api-reference
+      - type: OpenAPI
+        url: properties/audio-openapi-original.yml      
     overlays:
       - type: APIs.io Search
         url: >-
@@ -76,6 +86,11 @@ apis:
       - Given
       - Models
       - Responses
+    properties:
+      - type: Documentation
+        url: https://platform.openai.com/docs/api-reference
+      - type: OpenAPI
+        url: properties/chat-openapi-original.yml      
     overlays:
       - type: APIs.io Search
         url: >-
@@ -98,10 +113,15 @@ apis:
       - Creates
       - Given
       - Models
-      - Parameters
+      - Parameters 
       - Prompts
       - Provided
       - Responses
+    properties:
+      - type: Documentation
+        url: https://platform.openai.com/docs/api-reference
+      - type: OpenAPI
+        url: properties/completions-openapi-original.yml      
     overlays:
       - type: APIs.io Search
         url: >-
@@ -123,6 +143,11 @@ apis:
       - Representing
       - Text
       - Vectors
+    properties:
+      - type: Documentation
+        url: https://platform.openai.com/docs/api-reference
+      - type: OpenAPI
+        url: properties/embeddings-openapi-original.yml      
     overlays:
       - type: APIs.io Search
         url: >-
@@ -179,10 +204,12 @@ apis:
       - Uploads
       - Used
       - Various
+    properties:
+      - type: Documentation
+        url: https://platform.openai.com/docs/api-reference
+      - type: OpenAPI
+        url: properties/files-openapi-original.yml      
     overlays:
-      - type: APIs.io Search
-        url: >-
-          overlays/https://github.com/apis-json/artisanal/tree/main/apis/openai/files-openapi-search.yml
       - type: APIs.io Search
         url: overlays/files-openapi-search.yml
       - type: API Evangelist Ratings
@@ -223,10 +250,12 @@ apis:
       - The
       - Tuning
       - Your
+    properties:
+      - type: Documentation
+        url: https://platform.openai.com/docs/api-reference
+      - type: OpenAPI
+        url: properties/fine-tuning-openapi-original.yml      
     overlays:
-      - type: APIs.io Search
-        url: >-
-          overlays/https://github.com/apis-json/artisanal/tree/main/apis/openai/fint-tuning-openapi-search.yml
       - type: APIs.io Search
         url: overlays/fint-tuning-openapi-search.yml
       - type: API Evangelist Ratings
@@ -252,10 +281,12 @@ apis:
       - Original
       - Prompts
       - Variations
+    properties:
+      - type: Documentation
+        url: https://platform.openai.com/docs/api-reference
+      - type: OpenAPI
+        url: properties/images-openapi-original.yml      
     overlays:
-      - type: APIs.io Search
-        url: >-
-          overlays/https://github.com/apis-json/artisanal/tree/main/apis/openai/images-openapi-search.yml
       - type: APIs.io Search
         url: overlays/images-openapi-search.yml
       - type: API Evangelist Ratings
@@ -282,10 +313,12 @@ apis:
       - Provides
       - Providing
       - Roles
+    properties:
+      - type: Documentation
+        url: https://platform.openai.com/docs/api-reference
+      - type: OpenAPI
+        url: properties/models-openapi-original.yml      
     overlays:
-      - type: APIs.io Search
-        url: >-
-          overlays/https://github.com/apis-json/artisanal/tree/main/apis/openai/models-openapi-search.yml
       - type: APIs.io Search
         url: overlays/models-openapi-search.yml
       - type: API Evangelist Ratings
@@ -318,10 +351,12 @@ apis:
       - They're
       - Threads
       - Tool
+    properties:
+      - type: Documentation
+        url: https://platform.openai.com/docs/api-reference
+      - type: OpenAPI
+        url: properties/threads-openapi-original.yml      
     overlays:
-      - type: APIs.io Search
-        url: >-
-          overlays/https://github.com/apis-json/artisanal/tree/main/apis/openai/threads-openapi-search.yml
       - type: APIs.io Search
         url: overlays/threads-openapi-search.yml
       - type: API Evangelist Ratings
