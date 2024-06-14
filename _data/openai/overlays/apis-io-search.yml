@@ -31,9 +31,9 @@ apis:
       - Returns
     properties:
       - type: Documentation
-        url: https://platform.openai.com/docs/api-reference
+        url: https://platform.openai.com/docs/assistants/overview
       - type: OpenAPI
-        url: properties/assistants-openapi-original.yml      
+        url: properties/assistants-openapi-original.yml
     overlays:
       - type: APIs.io Search
         url: >-
@@ -43,6 +43,8 @@ apis:
       - type: API Evangelist Ratings
         url: overlays/assistants-openapi-api-evangelist-ratings.yml
     aid: openai:openai-assistants-api
+    humanURL: https://platform.openai.com/docs/assistants/overview
+    baseURL: https://api.openai.com
   - name: OpenAI Audio API
     description: >-
       The Audio API provides two speech to text endpoints, transcriptions and
@@ -63,7 +65,7 @@ apis:
       - type: Documentation
         url: https://platform.openai.com/docs/api-reference
       - type: OpenAPI
-        url: properties/audio-openapi-original.yml      
+        url: properties/audio-openapi-original.yml
     overlays:
       - type: APIs.io Search
         url: >-
@@ -73,6 +75,7 @@ apis:
       - type: API Evangelist Ratings
         url: overlays/audio-openapi-api-evangelist-ratings.yml
     aid: openai:openai-audio-api
+    baseURL: https://api.openai.com
   - name: OpenAI Chat API
     description: >-
       Given a list of messages comprising a conversation, the model will return
@@ -88,9 +91,9 @@ apis:
       - Responses
     properties:
       - type: Documentation
-        url: https://platform.openai.com/docs/api-reference
+        url: https://platform.openai.com/docs/api-reference/chat
       - type: OpenAPI
-        url: properties/chat-openapi-original.yml      
+        url: properties/chat-openapi-original.yml
     overlays:
       - type: APIs.io Search
         url: >-
@@ -100,6 +103,8 @@ apis:
       - type: API Evangelist Ratings
         url: overlays/chat-openapi-api-evangelist-ratings.yml
     aid: openai:openai-chat-api
+    baseURL: https://api.openai.com
+    humanURL: https://platform.openai.com/docs/api-reference/chat
   - name: OpenAI Chat Completions API
     description: >-
       Chat models take a list of messages as input and return a model-generated
@@ -113,15 +118,15 @@ apis:
       - Creates
       - Given
       - Models
-      - Parameters 
+      - Parameters
       - Prompts
       - Provided
       - Responses
     properties:
       - type: Documentation
-        url: https://platform.openai.com/docs/api-reference
+        url: https://platform.openai.com/docs/api-reference/chat
       - type: OpenAPI
-        url: properties/completions-openapi-original.yml      
+        url: properties/completions-openapi-original.yml
     overlays:
       - type: APIs.io Search
         url: >-
@@ -131,6 +136,8 @@ apis:
       - type: API Evangelist Ratings
         url: overlays/completions-openapi-api-evangelist-ratings.yml
     aid: openai:openai-chat-completions-api
+    baseURL: https://api.openai.com
+    humanURL: https://platform.openai.com/docs/api-reference/chat
   - name: OpenAI Embeddings API
     description: >-
       Learn how to turn text into numbers, unlocking use cases like search.
@@ -145,9 +152,9 @@ apis:
       - Vectors
     properties:
       - type: Documentation
-        url: https://platform.openai.com/docs/api-reference
+        url: https://platform.openai.com/docs/guides/embeddings
       - type: OpenAPI
-        url: properties/embeddings-openapi-original.yml      
+        url: properties/embeddings-openapi-original.yml
     overlays:
       - type: APIs.io Search
         url: >-
@@ -157,6 +164,8 @@ apis:
       - type: API Evangelist Ratings
         url: overlays/embeddings-openapi-api-evangelist-ratings.yml
     aid: openai:openai-embeddings-api
+    baseURL: https://api.openai.com
+    humanURL: https://platform.openai.com/docs/guides/embeddings
   - name: OpenAI Files API
     description: >-
       Files are used to upload documents that can be used with features like
@@ -206,15 +215,17 @@ apis:
       - Various
     properties:
       - type: Documentation
-        url: https://platform.openai.com/docs/api-reference
+        url: https://platform.openai.com/docs/api-reference/files
       - type: OpenAPI
-        url: properties/files-openapi-original.yml      
+        url: properties/files-openapi-original.yml
     overlays:
       - type: APIs.io Search
         url: overlays/files-openapi-search.yml
       - type: API Evangelist Ratings
         url: overlays/files-openapi-api-evangelist-ratings.yml
     aid: openai:openai-files-api
+    baseURL: https://api.openai.com
+    humanURL: https://platform.openai.com/docs/api-reference/files
   - name: OpenAI Fine Tuning API
     description: >-
       Manage fine-tuning jobs to tailor a model to your specific training data.
@@ -252,9 +263,9 @@ apis:
       - Your
     properties:
       - type: Documentation
-        url: https://platform.openai.com/docs/api-reference
+        url: https://platform.openai.com/docs/guides/fine-tuning
       - type: OpenAPI
-        url: properties/fine-tuning-openapi-original.yml      
+        url: properties/fine-tuning-openapi-original.yml
     overlays:
       - type: APIs.io Search
         url: overlays/fint-tuning-openapi-search.yml
@@ -263,6 +274,8 @@ apis:
       - type: APIs.io Search
         url: overlays/fine-tuning-openapi-search.yml
     aid: openai:openai-fine-tuning-api
+    baseURL: https://api.openai.com
+    humanURL: https://platform.openai.com/docs/guides/fine-tuning
   - name: OpenAI Images API
     description: >-
       Learn how to generate or manipulate images with DALL·E in the API. The
@@ -283,15 +296,17 @@ apis:
       - Variations
     properties:
       - type: Documentation
-        url: https://platform.openai.com/docs/api-reference
+        url: https://platform.openai.com/docs/guides/images
       - type: OpenAPI
-        url: properties/images-openapi-original.yml      
+        url: properties/images-openapi-original.yml
     overlays:
       - type: APIs.io Search
         url: overlays/images-openapi-search.yml
       - type: API Evangelist Ratings
         url: overlays/images-openapi-api-evangelist-ratings.yml
     aid: openai:openai-images-api
+    baseURL: https://api.openai.com
+    humanURL: https://platform.openai.com/docs/guides/images
   - name: OpenAI Models API
     description: >-
       List and describe the various models available in the API. You can refer
@@ -315,15 +330,17 @@ apis:
       - Roles
     properties:
       - type: Documentation
-        url: https://platform.openai.com/docs/api-reference
+        url: https://platform.openai.com/docs/models
       - type: OpenAPI
-        url: properties/models-openapi-original.yml      
+        url: properties/models-openapi-original.yml
     overlays:
       - type: APIs.io Search
         url: overlays/models-openapi-search.yml
       - type: API Evangelist Ratings
         url: overlays/models-openapi-api-evangelist-ratings.yml
     aid: openai:openai-models-api
+    baseURL: https://api.openai.com
+    humanURL: https://platform.openai.com/docs/models
   - name: OpenAI Threads API
     description: Create threads that assistants can interact with.
     tags:
@@ -353,15 +370,19 @@ apis:
       - Tool
     properties:
       - type: Documentation
-        url: https://platform.openai.com/docs/api-reference
+        url: >-
+          https://platform.openai.com/docs/assistants/how-it-works/managing-threads-and-messages
       - type: OpenAPI
-        url: properties/threads-openapi-original.yml      
+        url: properties/threads-openapi-original.yml
     overlays:
       - type: APIs.io Search
         url: overlays/threads-openapi-search.yml
       - type: API Evangelist Ratings
         url: overlays/threads-openapi-api-evangelist-ratings.yml
     aid: openai:openai-threads-api
+    baseURL: https://api.openai.com
+    humanURL: >-
+      https://platform.openai.com/docs/assistants/how-it-works/managing-threads-and-messages
 maintainers:
   - FN: API Evangelist
     url: http://apievangelist.com
