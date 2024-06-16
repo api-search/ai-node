@@ -45,6 +45,7 @@ apis:
     aid: openai:openai-assistants-api
     humanURL: https://platform.openai.com/docs/assistants/overview
     baseURL: https://api.openai.com
+    score: 1329
   - name: OpenAI Audio API
     description: >-
       The Audio API provides two speech to text endpoints, transcriptions and
@@ -63,7 +64,7 @@ apis:
       - Translations
     properties:
       - type: Documentation
-        url: https://platform.openai.com/docs/api-reference
+        url: https://platform.openai.com/docs/guides/text-to-speech
       - type: OpenAPI
         url: properties/audio-openapi-original.yml
     overlays:
@@ -76,6 +77,8 @@ apis:
         url: overlays/audio-openapi-api-evangelist-ratings.yml
     aid: openai:openai-audio-api
     baseURL: https://api.openai.com
+    humanURL: https://platform.openai.com/docs/guides/text-to-speech
+    score: 128
   - name: OpenAI Chat API
     description: >-
       Given a list of messages comprising a conversation, the model will return
@@ -105,6 +108,7 @@ apis:
     aid: openai:openai-chat-api
     baseURL: https://api.openai.com
     humanURL: https://platform.openai.com/docs/api-reference/chat
+    score: 149
   - name: OpenAI Chat Completions API
     description: >-
       Chat models take a list of messages as input and return a model-generated
@@ -138,6 +142,7 @@ apis:
     aid: openai:openai-chat-completions-api
     baseURL: https://api.openai.com
     humanURL: https://platform.openai.com/docs/api-reference/chat
+    score: 281
   - name: OpenAI Embeddings API
     description: >-
       Learn how to turn text into numbers, unlocking use cases like search.
@@ -166,6 +171,7 @@ apis:
     aid: openai:openai-embeddings-api
     baseURL: https://api.openai.com
     humanURL: https://platform.openai.com/docs/guides/embeddings
+    score: 112
   - name: OpenAI Files API
     description: >-
       Files are used to upload documents that can be used with features like
@@ -226,6 +232,7 @@ apis:
     aid: openai:openai-files-api
     baseURL: https://api.openai.com
     humanURL: https://platform.openai.com/docs/api-reference/files
+    score: 894
   - name: OpenAI Fine Tuning API
     description: >-
       Manage fine-tuning jobs to tailor a model to your specific training data.
@@ -276,6 +283,7 @@ apis:
     aid: openai:openai-fine-tuning-api
     baseURL: https://api.openai.com
     humanURL: https://platform.openai.com/docs/guides/fine-tuning
+    score: 492
   - name: OpenAI Images API
     description: >-
       Learn how to generate or manipulate images with DALL·E in the API. The
@@ -307,6 +315,7 @@ apis:
     aid: openai:openai-images-api
     baseURL: https://api.openai.com
     humanURL: https://platform.openai.com/docs/guides/images
+    score: 120
   - name: OpenAI Models API
     description: >-
       List and describe the various models available in the API. You can refer
@@ -341,6 +350,7 @@ apis:
     aid: openai:openai-models-api
     baseURL: https://api.openai.com
     humanURL: https://platform.openai.com/docs/models
+    score: 201
   - name: OpenAI Threads API
     description: Create threads that assistants can interact with.
     tags:
@@ -383,8 +393,13 @@ apis:
     baseURL: https://api.openai.com
     humanURL: >-
       https://platform.openai.com/docs/assistants/how-it-works/managing-threads-and-messages
+    score: 1861
 maintainers:
   - FN: API Evangelist
     url: http://apievangelist.com
     email: info@apievangelist.com
 aid: openai
+score: 308
+overlays:
+  - type: API Evangelist Ratings
+    url: /overlays/api-evangelist-ratings.yml
