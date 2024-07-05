@@ -3,7 +3,7 @@ name: AssemblyAI
 description: >-
   Built by AI experts, AssemblyAI’s Speech AI models include accurate speech-to-text for voice data (such as calls, virtual meetings, and podcasts), speaker detection, sentiment analysis, chapter detection, PII redaction, and more.
 image: https://kinlane-productions2.s3.amazonaws.com/apis-json/apis-json-logo.jpg
-url: https://raw.githubusercontent.com/api-search/artificial-intelligence/main/_apis_/assemblyai/apis.md
+url: https://raw.githubusercontent.com/api-search/ai/main/_apis/assemblyai/apis.md
 created: 2024-06-06
 modified: 2024-06-06
 specificationVersion: '0.18'

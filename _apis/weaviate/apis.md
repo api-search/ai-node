@@ -4,7 +4,7 @@ description: >-
   Weaviate is more than just a database. It’s a flexible platform
 for building powerful, production-ready AI applications.
 image: https://kinlane-productions2.s3.amazonaws.com/apis-json/apis-json-logo.jpg
-url: https://raw.githubusercontent.com/api-search/artificial-intelligence/main/_apis_/weaviate/apis.md
+url: https://raw.githubusercontent.com/api-search/ai/main/_apis/weaviate/apis.md
 created: 2024-06-18
 modified: 2024-06-18
 specificationVersion: '0.18'

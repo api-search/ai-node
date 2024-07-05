@@ -8,8 +8,7 @@ description: >-
   functionalities that enable users to navigate and manipulate their data
   effectively.
 image: https://kinlane-productions2.s3.amazonaws.com/apis-json/apis-json-logo.jpg
-url: >-
-  https://raw.githubusercontent.com/api-search/artificial-intelligence/main/_apis_/proompty/apis.md
+url: https://raw.githubusercontent.com/api-search/ai/main/_apis/proompty/apis.md
 created: '2024-06-06T00:00:00.000Z'
 modified: '2024-06-06T00:00:00.000Z'
 specificationVersion: '0.18'

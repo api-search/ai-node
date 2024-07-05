@@ -7,7 +7,7 @@ description: >-
   smarter than humans—benefits all of humanity. We are building safe and
   beneficial AGI, but will also consider our mission fulfilled if our work aids
   others to achieve this outcome.
-url: https://raw.githubusercontent.com/apis-json/artisanal/main/apis/openai.yml
+url: https://raw.githubusercontent.com/api-search/ai/main/_apis/openai/apis.md
 created: 2024/04/14
 modified: 2024/04/14
 specificationVersion: '0.16'

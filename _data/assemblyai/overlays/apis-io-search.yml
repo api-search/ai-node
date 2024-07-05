@@ -5,9 +5,7 @@ description: >-
   speaker detection, sentiment analysis, chapter detection, PII redaction, and
   more.
 image: https://kinlane-productions2.s3.amazonaws.com/apis-json/apis-json-logo.jpg
-url: >-
-  https://raw.githubusercontent.com/api-search/artificial-intelligence/main/_apis_/assemblyai/apis.md
-created: '2024-06-06T00:00:00.000Z'
+url: https://raw.githubusercontent.com/api-search/ai/main/_data/assemblyai/overlays/apis-io-search.yml
 modified: '2024-06-06T00:00:00.000Z'
 specificationVersion: '0.18'
 tags:

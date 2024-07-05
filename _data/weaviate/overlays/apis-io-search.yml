@@ -2,7 +2,7 @@ name: Qdrant
 description: >-
   Powering the next generation of AI applications with advanced, high-performant vector similarity search technology.
 image: https://kinlane-productions2.s3.amazonaws.com/apis-json/apis-json-logo.jpg
-url: https://raw.githubusercontent.com/api-search/artificial-intelligence/main/_apis_/qdrant/apis.md
+url: https://raw.githubusercontent.com/api-search/ai/main/_data/weaviate/overlays/apis-io-search.yml
 created: 2024-06-18
 modified: 2024-06-18
 specificationVersion: '0.18'
