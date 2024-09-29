@@ -1,11 +1,11 @@
----
 name: Qdrant
 description: >-
-  Powering the next generation of AI applications with advanced, high-performant vector similarity search technology.
+  Powering the next generation of AI applications with advanced, high-performant
+  vector similarity search technology.
 image: https://kinlane-productions2.s3.amazonaws.com/apis-json/apis-json-logo.jpg
 url: https://raw.githubusercontent.com/api-search/ai/main/_apis/qdrant/apis.md
-created: 2024-06-18
-modified: 2024-06-18
+created: 2024-06-18T00:00:00.000Z
+modified: 2024-06-18T00:00:00.000Z
 specificationVersion: '0.18'
 tags:
   - Artificial Intelligence
@@ -14,7 +14,11 @@ tags:
 apis:
   - name: Qdrant API
     description: >-
-      Qdrant (read: quadrant) is a vector similarity search engine. Use our documentation to develop a production-ready service with a convenient API to store, search, and manage vectors with an additional payload. Qdrant’s expanding features allow for all sorts of neural network or semantic-based matching, faceted search, and other applications.
+      Qdrant (read: quadrant) is a vector similarity search engine. Use our
+      documentation to develop a production-ready service with a convenient API
+      to store, search, and manage vectors with an additional payload. Qdrant’s
+      expanding features allow for all sorts of neural network or semantic-based
+      matching, faceted search, and other applications.
     image: https://kinlane-productions2.s3.amazonaws.com/apis-json/apis-json-logo.jpg
     humanURL: https://qdrant.tech/documentation/
     baseURL: https://platform.openai.com/
@@ -23,11 +27,12 @@ apis:
       - type: Documentation
         url: https://qdrant.tech/documentation/
       - type: OpenAPI
-        url: properties/qdrant-openapi-original.yml  
-    aid: qdrant:qdrant
+        url: properties/qdrant-openapi-original.yml
+    aid: qdrant:qdrant-api
 common:
   - type: OpenAPI
-    url: https://raw.githubusercontent.com/qdrant/qdrant/master/docs/redoc/master/openapi.json
+    url: >-
+      https://raw.githubusercontent.com/qdrant/qdrant/master/docs/redoc/master/openapi.json
   - type: Quick Start
     url: https://qdrant.tech/documentation/quick-start/
   - type: Concepts
@@ -41,13 +46,13 @@ common:
   - type: Examples
     url: https://qdrant.tech/documentation/examples/
   - type: FAQs
-    url: https://qdrant.tech/documentation/faq/qdrant-fundamentals/   
+    url: https://qdrant.tech/documentation/faq/qdrant-fundamentals/
   - type: Release Notes
     url: https://github.com/qdrant/qdrant/releases
   - type: Pricing
     url: https://qdrant.tech/pricing/
   - type: Blog
-    url: https://qdrant.tech/blog/      
+    url: https://qdrant.tech/blog/
 maintainers:
   - FN: API Evangelist
     url: http://apievangelist.com
@@ -56,4 +61,3 @@ overlays:
   - type: APIs.io Search
     url: overlays/apis-io-search.yml
 aid: qdrant
----

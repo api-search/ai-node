@@ -1,4 +1,3 @@
----
 name: Proompty
 description: >-
   Proompty is an advanced Retrieval Augmented Generation (RAG) API designed to
@@ -179,5 +178,3 @@ overlays:
     url: /overlays/api-evangelist-ratings.yml
 aid: proompty
 score: 40
-
----
