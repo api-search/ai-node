@@ -1,3 +1,4 @@
+---
 name: AssemblyAI
 description: >-
   Built by AI experts, AssemblyAI’s Speech AI models include accurate
@@ -40,3 +41,4 @@ overlays:
   - type: APIs.io Search
     url: overlays/apis-io-search.yml
 aid: assemblyai
+---

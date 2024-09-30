@@ -1,3 +1,4 @@
+---
 name: Weaviate
 description: >-
   Weaviate is more than just a database. It’s a flexible platform for building
@@ -57,3 +58,4 @@ overlays:
   - type: APIs.io Search
     url: overlays/apis-io-search.yml
 aid: weaviate
+---
